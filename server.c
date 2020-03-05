@@ -65,6 +65,9 @@ int main()
 		cc = send(ssock, buf, strlen(buf)+1, 0);  //发送数据(客户端数据);
 		if(cc==SOCKET_ERROR||cc==0)
 			quit(cc, msock);
+		
+		char* myip = inet_ntoa(fsin.sin_addr);
+		printf("客户端IP地址:%s\n\n",myip);
 		//printf("收到时间：%s\n\n",pts);
 	    closesocket(ssock);
 	}
