@@ -67,8 +67,11 @@ int main()
 			quit(cc, msock);
 		
 		char* myip = inet_ntoa(fsin.sin_addr);
-		printf("客户端IP地址:%s\n\n",myip);
+		printf("客户端IP地址:%s\n",myip);
 		//printf("收到时间：%s\n\n",pts);
+		unsigned short temp1 = ntohs(fsin.sin_port);
+		//char* myport = itoa(temp1);
+		printf("%u\n\n",temp1);
 	    closesocket(ssock);
 	}
 	closesocket(msock);                                 // 关闭监听套接字
